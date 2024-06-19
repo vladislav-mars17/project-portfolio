@@ -1,0 +1,184 @@
+* {
+    /* vertical-align: middle; */
+    /* color: white; */
+    /* background-color: rgba(196, 226, 255, 0.904); */
+    /* background: linear-gradient(black, purple); */
+    /* margin-right: 100px; */
+    /* margin-left: 100px; */
+    box-sizing: border-box;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+}
+
+body {
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(208, 232, 255, 0.904);
+    /* vertical-align: middle; */
+    /* line-height: 1.6; */
+}
+
+.main {
+    /* margin: 5% 0; */
+    /* background-color: rgba(226, 212, 233, 0.904); */
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-bottom: 100px; 
+}
+
+header {
+    background-color: rgba(146, 164, 189, 0.884);
+    padding: 120px;
+    color: white;
+    /* font-size: 20px; */
+    /* letter-spacing: 2px; */
+    /* word-spacing: 1px; */
+}
+
+.current-weather {
+    margin-right: 400px;
+    margin-left: 400px;
+    /* width: 50%; */
+}
+
+.temperature {
+    font-size: 100px;
+    margin-bottom: 100px;
+}
+
+.city_name {
+    font-size: 20px;
+}
+
+.btn {
+    background-color: rgba(146, 164, 189, 0.884);
+    /* border-radius: 10px; */
+    border: none;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Darker background on mouse-over */
+.btn:hover {
+    background-color: rgb(125, 152, 235);
+}
+
+  /*the container must be positioned relative:*/
+.autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 450px;
+    /* width: 85%; */
+}
+
+input {
+    border: white;
+    outline: none !important;
+    background-color: #ffffff;
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    /* border-radius: 10px; */
+    margin-top: 30px;
+}
+
+.input-field:focus {
+    border: white;
+}
+  
+input[type=text] {
+    background-color: #ffffff;
+    width: 100%;
+    border: white;
+}
+  
+.autocomplete-items {
+    position: absolute;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+  
+.autocomplete-items div {
+    padding: 20px;
+    cursor: pointer;
+    background-color: #ffffff;
+    /* border-radius: 10px; */
+}
+  
+  /*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: #dcefff;
+}
+  
+  /*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: #dcefff !important; 
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: left;
+    /* width: 500px; */
+    border-spacing: 50px 10px;
+}
+
+.column {
+    display: inline-block;
+    /* width: 400px; */
+    /* float: left; */
+    /* width: 45%; */
+    /* padding: 0 10px; */
+}
+
+.row {
+    margin: 0 -5px;
+    margin-top: 20px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.card {
+    width: 400px;
+    /* height: 600px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: rgba(146, 164, 189, 0.884);
+    color: white;
+    /* border-radius: 10px; */
+    /* margin-right: 100px; */
+    margin: 10px;
+}
+
+.container {
+    padding: 0 16px;
+    /* width: 100%; */
+}
+
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.forecast-weather-date {
+    font-weight: bold;
+}
+
+.forecast-weather-temperature {
+    font-weight: bold;
+    font-size: 25px;
+}

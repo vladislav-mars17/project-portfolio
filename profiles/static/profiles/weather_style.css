@@ -1,0 +1,349 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(208, 232, 255, 0.904);
+}
+
+
+/* HEADER MAIN INFO */
+
+header {
+    width: 100%;
+    background-color: rgba(146, 164, 189, 0.884);
+}
+.temperature {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.city_name {
+    color: white;
+    margin-bottom: 0;
+}
+
+
+/* INPUT FIELD */
+
+.wrapper {
+    display: grid;
+}
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+.btn {
+    background-color: rgba(146, 164, 189, 0.884);
+    border: none;
+    color: white;
+    padding: 0;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: rgb(111, 167, 219);
+}
+input {
+    border: white;
+    outline: none !important;
+    background-color: #ffffff;
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+}
+
+
+/* MAIN CARD */
+
+.current_wrapper {
+    margin-top: 40px;
+    display: grid;
+}
+.main_card {
+    background-color: rgba(146, 164, 189, 0.884);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.main_info {
+    font-weight: bold;
+}
+.main_row {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding-top: 15px;
+}
+
+
+/* FORECAST CARD */
+
+.forecast_wrapper {
+    margin-top: 70px;
+    display: grid;
+}
+.forecast_card {
+    background-color: rgba(146, 164, 189, 0.884);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.forecast_main_info {
+    font-weight: bold;
+}
+.forecast_row {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding-top: 15px;
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: 10%;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+
+@media (min-width: 320px) {
+    header {
+        padding-top: 30%;
+        padding-bottom: 30%;
+    }
+    .temperature {
+        font-size: 85px;
+    }
+    .city_name {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .wrapper {
+        margin-top: 30px;
+        grid-template-columns: 2% 82% 14% 2%;
+    }
+    .btn {
+        font-size: 30px;
+    }
+    input {
+        font-size: 20px;
+    }
+    .current_wrapper {
+        grid-template-columns: 5% 90% 5%;
+    }
+    .main_card {
+        font-size: 17px;
+    }
+    .main_col1 {
+        text-align: left;
+        padding-left: 10px;
+    }
+    .forecast_wrapper {
+        grid-template-columns: 5% 90% 5%;
+    }
+    .forecast_card {
+        font-size: 17px;
+    }
+    .forecast_col1 {
+        text-align: left;
+        padding-left: 10px;
+    }
+    footer {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 700px) {
+    header {
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+    .temperature {
+        font-size: 85px;
+    }
+    .city_name {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .wrapper {
+        margin-top: 30px;
+        grid-template-columns: 15% 60% 10% 15%;
+    }
+    .btn {
+        font-size: 40px;
+    }
+    input {
+        font-size: 20px;
+    }
+    .current_wrapper {
+        grid-template-columns: 25% 50% 25%;
+    }
+    .main_card {
+        font-size: 22px;
+    }
+    .main_col1 {
+        text-align: left;
+        padding-left: 5%;
+    }
+    .forecast_wrapper {
+        grid-template-columns: 6.67% 40% 3.33% 3.33% 40% 6.67%;
+    }
+    .forecast_card {
+        font-size: 22px;
+    }
+    .forecast_col1 {
+        text-align: left;
+        padding-left: 5%;
+    }
+    footer {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1000px) {
+    header {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .temperature {
+        font-size: 85px;
+    }
+    .city_name {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .wrapper {
+        margin-top: 30px;
+        grid-template-columns: 25% 45% 5% 25%;
+    }
+    .btn {
+        font-size: 30px;
+    }
+    input {
+        font-size: 20px;
+    }
+    .current_wrapper {
+        grid-template-columns: 25% 50% 25%;
+    }
+    .main_card {
+        font-size: 25px;
+    }
+    .main_col1 {
+        text-align: left;
+        padding-left: 5%;
+    }
+    .forecast_wrapper {
+        grid-template-columns: 6.67% 40% 3.33% 3.33% 40% 6.67%;
+    }
+    .forecast_card {
+        font-size: 24px;
+    }
+    .forecast_col1 {
+        text-align: left;
+        padding-left: 5%;
+    }
+    footer {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1400px) {
+    header {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .temperature {
+        font-size: 85px;
+    }
+    .city_name {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .wrapper {
+        margin-top: 30px;
+        grid-template-columns: 25% 45% 5% 25%;
+    }
+    .btn {
+        font-size: 30px;
+    }
+    input {
+        font-size: 20px;
+    }
+    .current_wrapper {
+        grid-template-columns: 35% 30% 35%;
+    }
+    .main_card {
+        font-size: 25px;
+    }
+    .main_col1 {
+        text-align: left;
+        padding-left: 5%;
+    }
+    .forecast_wrapper {
+        grid-template-columns: 2.5% 30% 1.25% 1.25% 30% 1.25% 1.25% 30% 2.5%;
+    }
+    .forecast_card {
+        font-size: 25px;
+    }
+    .forecast_col1 {
+        text-align: left;
+        padding-left: 5%;
+    }
+    footer {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 2000px) {
+    header {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .temperature {
+        font-size: 150px;
+    }
+    .city_name {
+        margin-top: 20px;
+        font-size: 40px;
+    }
+    .wrapper {
+        margin-top: 50px;
+        grid-template-columns: 35% 27% 3% 35%;
+    }
+    .btn {
+        font-size: 40px;
+    }
+    input {
+        font-size: 40px;
+    }
+    .current_wrapper {
+        grid-template-columns: 35% 30% 35%;
+    }
+    .main_card {
+        font-size: 40px;
+    }
+    .main_col1 {
+        text-align: left;
+        padding-left: 10%;
+    }
+    .forecast_wrapper {
+        grid-template-columns: 2.5% 30% 1.25% 1.25% 30% 1.25% 1.25% 30% 2.5%;
+    }
+    .forecast_card {
+        font-size: 40px;
+    }
+    .forecast_col1 {
+        text-align: left;
+        padding-left: 10%;
+    }
+    footer {
+        font-size: 40px;
+    }
+}

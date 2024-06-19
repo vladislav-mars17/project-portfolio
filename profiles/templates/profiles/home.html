@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Уксеков Владислав</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Uksekov Vladislav">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% load static %}
+
+        <style>
+        body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+        .w3-row-padding img {margin-bottom: 12px}
+        .w3-sidebar {
+            width: 120px;
+            background: #375379;
+        }
+        #main {margin-left: 120px}
+        @media only screen and (max-width: 600px) {
+            #main {margin-left: 0}
+        }
+        @media only screen and (min-width: 700px) {
+            .my_name {
+                font-size: 60px;
+            }
+        }
+        </style>
+    </head>
+
+    <body class="w3" style="background-color: rgba(96, 106, 122, 0.527)">
+
+        <!-- Icon Bar (Sidebar - hidden on small screens) -->
+        <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+            <!-- Avatar image in top left corner -->
+            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-blue-gray">
+                <i class="fa fa-home w3-xxlarge w3-text-light-grey"></i>
+                <p class="w3-text-light-grey">Начало</p>
+            </a>
+            <a href="#skills" class="w3-bar-item w3-button w3-padding-large w3-hover-blue-gray">
+                <i class="fa fa-user w3-xxlarge w3-text-light-grey"></i>
+                <p class="w3-text-light-grey">Навыки</p>
+            </a>
+            <a href="#education" class="w3-bar-item w3-button w3-hover-blue-gray" style="padding: 12px">
+                <i class="fa fa-university w3-xxlarge w3-text-light-grey"></i>
+                <p class="w3-text-light-grey">Образование</p>
+            </a>
+            <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-blue-gray">
+                <i class="fa fa-briefcase w3-xxlarge w3-text-light-grey"></i>
+                <p class="w3-text-light-grey">Проекты</p>
+            </a>
+        </nav>
+
+        <!-- Navbar on small screens (Hidden on medium and large screens) -->
+        <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+            <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+                <a href="#" class="w3-bar-item w3-button w3-text-light-grey w3-hover-blue-gray" style="width:25% !important; padding-left: 5px; padding-right: 5px">Начало</a>
+                <a href="#skills" class="w3-bar-item w3-button w3-text-light-grey w3-hover-blue-gray" style="width:20% !important; padding-left: 5px; padding-right: 5px">Навыки</a>
+                <a href="#education" class="w3-bar-item w3-button w3-text-light-grey w3-hover-blue-gray" style="width:30% !important; padding-left: 5px; padding-right: 5px">Образование</a>
+                <a href="#projects" class="w3-bar-item w3-button w3-text-light-grey w3-hover-blue-gray" style="width:25% !important; padding-left: 5px; padding-right: 5px">Проекты</a>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="w3-padding-large" id="main">
+
+            <!-- Header/Home -->
+            <header class="w3-container w3-padding-32 w3-center w3" id="home">
+                <h1 class="my_name">Уксеков Владислав</h1>
+                <p></p>
+            </header>
+
+            <!-- About Section -->
+            <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+
+                <div class="w3-content w3-justify w3-text-grey" id="about">
+                    <p class="w3-text-white">
+                        Молодой ориентированный на результат специалист в области IT с трехлетним опытом разработки.
+                        Обладаю отличными коммуникативными навыками, высокой организованностью и ответственностью.
+                        Быстро обучаем и внимателен с желанием профессионально развиваться, участвовать в новых проектах.
+                        <br>В настоящее время работаю ведущим экспертом отдела разработки информационных систем ФГБУ «САЦ Минэнерго России». На текущем месте работы:
+                        <ul class="w3-text-white">
+                            <li>Разработал веб-интерфейс образовательной платформы для контроля уровня знаний, используя Django</li>
+                            <li>Выстроил взаимодействие внутренних сервисов посредством API, используя FastAPI</li>
+                            <li>Настроил автоматическую генерацию документов по расписанию в формате Excel</li>
+                            <li>Настроил автоматическую выгрузку данных с веб-ресурсов и их загрузку в базы данных для дальнейшего анализа и систематизации</li>
+                            <li>Разработал телеграмм-бота, фиксирующего выполнение программ на сервере, с отчетностью по расписанию, запросу и по событию</li>
+                            <li>Занимался формированием аналитических справок, используя Python-инструменты анализа данных</li>
+                        </ul>
+                    </p>
+                </div>
+
+            </div>
+            <!-- End About Section -->
+
+            <!-- Skills Section -->
+            <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="skills">
+
+                <h2 class="w3-text-light-grey">Навыки</h2>
+                <hr style="width:200px" class="w3-opacity">
+
+                <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge">Python</span><br>
+                    </div>
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge">Django</span><br>
+                    </div>
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge">FastAPI</span><br>
+                    </div>
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge">Git</span><br>
+                    </div>
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge">SQL</span><br>
+                        PostgreSQL, MySQL
+                    </div>
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge">JavaScript</span><br>
+                    </div>
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge">HTML</span><br>
+                    </div>
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge">CSS</span><br>
+                    </div>
+                </div>
+
+                <p>
+                    <ul class="w3-text-white"><br>
+                        <li>Знание языков программирования: Python</li>
+                        <li>Опыт работы с фреймворками Python: Django, FastAPI</li>
+                        <li>Опыт работы с библиотеками Python: pandas, numpy, geopandas, matplotlib, requests, BeautifulSoup,
+                    selenium, psycopg2, pyodbc, pathlib, openpyxl, smtplib, aiogram, asyncio, threading</li>
+                        <li>Опыт работы с СУБД: PostgreSQL, MySQL</li>
+                        <li>Навыки работы с инструментами разработки: PyCharm, Visual Studio Code</li>
+                        <li>Умение разбираться в чужом коде</li>
+                        <li>Опыт автоматизации рутинных задач</li>
+                        <li>Опыт работы с API</li>
+                        <li>Опыт создания веб-интерфейсов: HTML, CSS, JavaScript</li>
+                        <li>Опыт работы с многопоточностью и асинхронностью (asyncio)</li>
+                        <li>Умение работать с системами контроля версий: Git</li>
+                        <li>Опыт работы с Bash</li>
+                        <li>Продвинутый пользователь Excel</li>
+                    </ul>
+                </p>
+
+                <button class="w3-button w3-light-grey w3-padding-large w3-section">
+                    <i class="fa fa-download" style="padding-right: 15px"></i>Резюме
+                </button>
+            </div>
+            <!-- End Skills Section -->
+
+            <!-- Education Section -->
+            <div class="w3-padding-64 w3-content" id="education">
+                <h2 class="w3-text-light-grey">Образование</h2>
+                <hr style="width:200px" class="w3-opacity">
+
+                <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge">10.2022<br><br>08.2022</span><br>
+                    </div>
+                    <div class="w3-section" style="text-align: justify; margin-left: 5%; margin-right: 5%;">
+                        <h6><b>Российская академия народного хозяйства и государственной службы <br>при Президенте Российской Федерации</b>
+                            <br><b>Направление:</b> Государственное и муниципальное управление
+                            <br><b>Повышение квалификации по дополнительной профессиональной программе:</b> Цифровизация государственных услуг
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge"><br>2022<br><br>2020<br></span><br>
+                    </div>
+                    <div class="w3-section" style="text-align: justify; margin-left: 5%; margin-right: 5%;">
+                        <h6><b>«Национальный исследовательский университет <br>«Московский энергетический институт»</b>
+                            <br><b>Квалификация:</b> Магистр (Диплом магистра с отличием)
+                            <br><b>Направление:</b> Интеллектуальные системы защиты, автоматики и <br>управления энергосистемами
+                            <br><b>Дипломная работа:</b> «Применение методов искусственного интеллекта <br>для повышения эффективности систем информационной безопасности <br>на цифровых подстанциях»
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+                    <div class="w3-quarter w3-section">
+                        <span class="w3-xlarge"><br>2020<br><br>2016<br></span><br>
+                    </div>
+                    <div class="w3-section" style="text-align: justify; margin-left: 5%; margin-right: 5%;">
+                        <h6><b>«Национальный исследовательский университет <br>«Московский энергетический институт»</b>
+                            <br><b>Квалификация:</b> Бакалавр (Диплом бакалавра с отличием)
+                            <br><b>Направление:</b> Релейная защита и автоматизация <br>электроэнергетических систем
+                            <br><b>Дипломная работа:</b> «Релейная защита подстанции 220/110/10 кВ <br>с разработкой и исследованием алгоритма дистанционной защиты <br>воздушной линии 220 кВ»
+                        </h6>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Education Section -->
+
+            <!-- Projects Section -->
+            <div class="w3-padding-64 w3-content" id="projects">
+                <h2 class="w3-text-light-grey">Проекты</h2>
+                <hr style="width:200px" class="w3-opacity">
+
+                <div class="w3-row-padding" style="margin:0 -16px">
+
+                    <div class="w3-half w3-margin-bottom">
+                        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                            <li class="w3-dark-grey w3-xlarge w3-padding-32">Экзамен</li>
+                            <li class="w3-padding-16">Образовательная платформа <br>для контроля уровня знаний</li>
+                            <li class="w3-padding-16">Django, JS, SQL, HTML, CSS</li>
+                            <li class="w3-light-grey w3-padding-24">
+                                <button class="w3-button w3-white w3-padding-large w3-hover-black" onclick="window.location.href='/exam/{{user_name}}'">Посмотреть</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="w3-half">
+                        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                            <li class="w3-dark-grey w3-xlarge w3-padding-32">Погода</li>
+                            <li class="w3-padding-16">Веб-интерфейс <br>прогноза погоды</li>
+                            <li class="w3-padding-16">Django, API, HTML, CSS</li>
+                            <li class="w3-light-grey w3-padding-24">
+                                <button class="w3-button w3-white w3-padding-large w3-hover-black" onclick="window.location.href='/weather'">Посмотреть</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- End Projects Section -->
+
+            <!-- Footer -->
+            <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+                <i class="fa fa-envelope w3-hover-opacity"></i>
+                <i class="fa fa-telegram w3-hover-opacity"></i>
+                <i class="fa fa-github w3-hover-opacity"></i>
+                <p class="w3-medium">by Uksekov Vladislav</p>
+            </footer>
+            <!-- End footer -->
+        </div>
+        <!-- END PAGE CONTENT -->
+    </body>
+</html>

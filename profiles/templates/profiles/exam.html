@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Уксеков Владислав</title>
+        <base href="">
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="author" content="Uksekov Vladislav">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'profiles/exam_style.css' %}" />
+        <script src="{% static 'profiles/exam.js' %}"></script>
+    </head>
+
+    <body>
+        <div id="wrapper" class="wrapper">
+            <header class="p-3 text-bg-dark">
+                <div class="container-fluid d-grid gap-3 align-items-center">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center">
+                        <h4 style="color: white;">Экзамен</h4>
+                    </div>
+                </div>
+            </header>
+            <aside></aside>
+            <section class="py-5 text-center container">
+                <div class="content">
+                    <h3><div hidden id="limit">{{ limit }}</div></h3>
+                    <h3><div hidden id="timer_hidden">{{ time_limit }}</div></h3>
+                    <h3><div hidden id="count_hidden">{{ count }}</div></h3>
+                    <h3><div hidden id="show_2" class="display_time"></div></h3>
+                    <h3><div id="timer" class="display_time"></div></h3>
+
+                    <div id="myProgress">
+                        <div id="myBar"></div>
+                    </div>
+                    
+                    <h3><span id="count"></span></h3>
+                    
+                    <div class="jumbotron my-4">
+                        <span hidden id="test_id">{{ test_id }}</span>
+                        <h2><p><span id="istruction">Правила</span></p></h2>
+                        
+                        <div class="row g-3" id="istruction_text">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <p class="istruction_text">
+                                    <span style="font-size: 20px;">
+                                        Перед Вами демонстрационный тест с вариантами ответов.
+                                        <br>Всего будет предложено {{ limit }} вопроса.
+                                        <br>На каждый вопрос будет ограничение в {{ time_limit }} секунд.
+                                        <br>Если время текущего вопроса закончится, Вы будете автоматически перенаправлены на следующий вопрос.
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+
+                        <div class="mb-3 form-check" id="agree">
+                            <input type="checkbox" class="form-check-input" id="agree_form" name="agree_form" value="agree_form" onclick="display_element()" style="font-size: 20px;">
+                            <label class="form-check-label" for="agree_form" style="font-size: 20px;">Подтверждение</label>
+                        </div>
+
+                        <h3 class="left"><p><ul id="list_question"></ul></p></h3>
+                        <p><ul class="left" id="several_answers"></ul></p>
+                        <h3></h3>
+                        <p></p>
+
+                        <form class="left" method="POST" id="addForm">
+                            {% csrf_token %}
+                            <p><ul id="list_answer"></ul></p>
+                            <p><ul hidden id="question_id"></ul></p>
+                            <button type="submit" class="btn_one" id="getTodos" style="margin-top: 3%; font-size: 16px;">Дальше</button>
+                        </form>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                document.ondragstart = noselect;
+                document.onselectstart = noselect;
+                document.oncontextmenu = noselect;
+                function noselect() {return false;}
+                </script>
+                
+                <script>
+                document.getElementById("getTodos").style.display = "none";
+                function display_element() {
+                    var element = document.getElementById("getTodos").style.display;
+                    if (element == "none") {
+                        document.getElementById("getTodos").style.display = ''
+                    } else {
+                        document.getElementById("getTodos").style.display = 'none'
+                    }
+                }
+
+                (function() {
+                    const allTodosUrl = "/exam/{{user_name}}";
+                    const result_allTodosUrl = "/result_exam/{{user_name}}";
+                    const readButton = document.getElementById("getTodos");
+                    console.log(readButton)
+
+                    let counter = setInterval(1000000);
+                    var time_all = document.getElementById("timer_hidden").innerHTML;
+
+                    var width = document.getElementById("count_hidden").innerHTML;
+                    var all_question = document.getElementById("limit").innerHTML;
+
+                    function timerID() {
+                        let time = document.getElementById("show_2").innerHTML;
+                        time = time - 1;
+                        if(time <= 0){
+                            clearInterval(counter)
+                            readButton.click()
+                        } else {
+                            document.getElementById("show_2").innerHTML = time;
+                            if (time <= 9) {
+                                document.getElementById("timer").textContent = '00:0' + time;
+                            } else {
+                                document.getElementById("timer").textContent = '00:' + time;
+                            }
+                        }
+                    }
+
+                    readButton.addEventListener("click", () => {
+                        var elem = document.getElementById("myBar");
+                        width++;
+                        width_per = width * 100 / all_question
+                        if (width_per <= 100) {
+                            elem.style.width = width_per + "%";
+                            document.getElementById("myBar").textContent = width_per.toFixed(1) + "%";
+                            document.getElementById('count').innerHTML = width + ' из ' + all_question;
+                            document.getElementById('count_hidden').innerHTML = width;
+                        }
+
+                        document.getElementById("istruction").style.display = "none";
+                        document.getElementById("istruction_text").style.display = "none";
+                        document.getElementById("agree").style.display = "none";
+
+                        getAllTodos(allTodosUrl, result_allTodosUrl);
+                        document.getElementById('show_2').innerHTML = time_all;
+                        document.getElementById('timer').textContent = '00:' + time_all;
+                        clearInterval(counter)
+                        counter = setInterval(timerID, 1000);
+                    });
+
+                    const addTodoForm = document.getElementById("addForm");
+                    console.log(addTodoForm)
+
+                    addTodoForm.addEventListener("submit", (e) => {
+                        e.preventDefault();
+                        let answers_values = []
+                        let answers_checked = []
+                        let question_id = []
+
+                        for (let i=1; i<(addTodoForm.elements).length-1; i++) {
+                            if (addTodoForm.elements[i].checked == true) {
+                                question_id.push(addTodoForm.elements[i].name)
+                                answers_values.push(addTodoForm.elements[i].value)
+                                answers_checked.push(addTodoForm.elements[i].checked)
+                            }
+                        }
+
+                        const formData = {
+                            question_id: question_id,
+                            values: answers_values,
+                            checked: answers_checked,
+                        }
+                        addTodo(allTodosUrl, formData);
+                        addTodoForm.reset();
+                    });
+                    })();
+                </script>
+            </section>
+            <footer class="py-3 my-4">
+                <ul class="nav justify-content border-bottom pb-3 mb-3"></ul>
+                <p class="text-center text-muted">by Uksekov Vladislav</p>
+            </footer>
+        </div>
+    </body>
+</html>
+
+
+
+
+

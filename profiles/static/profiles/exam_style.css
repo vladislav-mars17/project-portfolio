@@ -1,0 +1,92 @@
+.left {
+    text-align: left;
+}
+
+.form-check-label {
+    cursor: pointer;
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+
+.istruction_text{
+    text-align: justify;
+}
+
+header {
+    width: 100%;
+    background-color: rgb(101, 159, 182);
+	padding: 20px 0;
+    text-align: center;
+}
+
+.valid {
+    text-align:  center;
+    color: red;
+}
+
+html,
+body {
+	height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+	position: relative;
+	min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+.content {
+	padding-bottom: 90px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 80px;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+}
+  
+#myBar {
+    width: 0%;
+    height: 30px;
+    background-color: rgb(101, 159, 182);
+    color: white;
+}
+
+.btn_one {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+    color: #fff;
+    display:block;
+    width:100px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 12px 18px;
+    margin: 6px auto;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: background-color 0.1s linear;
+    -moz-transition: background-color 0.1s linear;
+    -o-transition: background-color 0.1s linear;
+    transition: background-color 0.1s linear;
+    background-color: rgb(101, 159, 182);
+    border: 1px solid rgb(101, 159, 182);     
+}
+
+button {
+    background-color: rgb(16, 76, 155);
+}

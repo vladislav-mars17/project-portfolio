@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Уксеков Владислав</title>
+        <base href="">
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="author" content="Uksekov Vladislav">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'profiles/weather_style.css' %}" />
+    </head>
+
+    <body>
+        <header>
+            <div class="general">
+                <h1 class="temperature">{{ temperature }}</h1>
+                <p class="city_name">{{ city_name }}</p>
+            </div>
+        </header>
+
+        <section class="main">
+
+            <form method="POST" class="wrapper">
+                <div class="space"></div>
+                <div class="autocomplete" >
+                    {% csrf_token %}
+                    <input id="myInput" type="text" name="city" placeholder="Город">  
+                    <input type="submit" hidden>
+                </div>
+                <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                <div class="space"></div>
+            </form>
+
+            <div class="current_wrapper">
+                <div class="current_wrapper_space"></div>
+                    {% if status %}
+                        <div class="main_card">
+                            {% for weather_parameter in weather_parameter_list %}
+                                {% if weather_parameter.name == 'Дата' %}
+                                    <div class="main_info">
+                                        {{ weather_parameter.value }}
+                                    </div>
+                                {% else %}
+                                    <div class="main_row">
+                                        <div class="main_col1">
+                                            {{ weather_parameter.name }}
+                                        </div>
+                                        <div class="main_col2">
+                                            {{ weather_parameter.value }} {{ weather_parameter.units }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                <div class="current_wrapper_space"></div>
+            </div>
+
+            <div class="forecast_wrapper">
+                {% for forecast_weather_parameter in forecast_weather_parameter_list %}
+                    <div class="forecast_wrapper_space"></div>
+                    <div class="forecast_card">
+                        {% for weather_parameter in forecast_weather_parameter %}
+                            {% if weather_parameter.name == 'Дата' %}
+                                <div class="forecast_main_info">
+                                    {{ weather_parameter.value }}
+                                </div>
+                            {% else %}
+                                <div class="forecast_row">
+                                    <div class="forecast_col1">
+                                        {{ weather_parameter.name }}
+                                    </div>
+                                    <div class="forecast_col2">
+                                        {{ weather_parameter.value }} {{ weather_parameter.units }}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="forecast_wrapper_space"></div>
+                {% endfor %}
+            </div>
+
+        </section>
+
+        <footer>
+            <p>by Uksekov Vladislav</p>
+        </footer>
+
+    </body>
+</html>
